@@ -87,18 +87,40 @@ An interactive, AI-powered portfolio website featuring a retro terminal interfac
 ```
 portfolio/
 ├── frontend/                 # React frontend
+│   ├── public/               # Static files
+│   │   ├── images/           # Image assets
+│   │   │   └── projects/     # Project screenshots
+│   │   └── command-sound.mp3 # Terminal sound effect
 │   ├── src/
-│   │   ├── components/
-│   │   │   └── terminal/    # Terminal components
-│   │   ├── pages/           # Page components
-│   │   └── services/        # API services
-│   └── package.json
-├── backend/                 # Express backend
-│   ├── routes/             # API routes
-│   ├── models/             # Database models
-│   ├── config/             # Configuration files
-│   └── middleware/         # Custom middleware
-└── README.md
+│   │   ├── components/       # Reusable UI components
+│   │   │   ├── navigation/   # Navigation components
+│   │   │   ├── terminal/     # Terminal interface components
+│   │   │   └── ui/           # UI elements and layouts
+│   │   ├── data/             # Static data
+│   │   │   ├── projects.js   # Project data
+│   │   │   └── personalInfo.js # Personal information
+│   │   ├── hooks/            # Custom React hooks
+│   │   ├── pages/            # Page components
+│   │   │   ├── About.jsx
+│   │   │   ├── Contact.jsx
+│   │   │   ├── Playground.jsx
+│   │   │   ├── Projects.jsx
+│   │   │   └── Terminal.jsx
+│   │   ├── services/         # API and service integrations
+│   │   │   ├── api.js
+│   │   │   └── geminiService.js
+│   │   ├── App.jsx           # Main App component
+│   │   ├── index.css         # Global styles
+│   │   └── main.jsx          # Entry point
+│   ├── .gitignore
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   └── vite.config.js
+├── .gitignore
+└── README.md                 # Project documentation
 ```
 
 ## 🎮 Available Commands
@@ -169,16 +191,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 ⭐ **Star this repository if you found it helpful!**
-## 🛠️ Tech Stack
-
-### Frontend
-- **React 18** - Modern UI library
-- **Vite** - Fast build tool and dev server
-- **Tailwind CSS** - Utility-first CSS framework
-- **JavaScript (ES6+)** - Modern JavaScript features
-
-### Backend
-- **Node.js** - Runtime environment
-- **Express.js** - Web application framework
-- **Gemini API** - AI chat functionality
-- **CORS** - Cross-origin resource sharing
