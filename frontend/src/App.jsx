@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/navigation/Navbar';
@@ -8,21 +8,48 @@ import Terminal from './pages/Terminal';
 import Projects from './pages/Projects';
 import Playground from './pages/Playground';
 import Contact from './pages/Contact';
-
-// Grid Background Component
-const GridBackground = () => (
-  <div className="fixed inset-0 -z-10 overflow-hidden">
-    <div className="absolute inset-0 bg-grid-white/[0.02] [mask-image:linear-gradient(0deg,transparent,black)]">
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
-    </div>
-  </div>
-);
+import BootSequence from './components/terminal/BootSequence';
+import { useMobile } from './hooks/useMobile';
 
 function App() {
+  const [showBootScreen, setShowBootScreen] = useState(false);
+  const { isMobile } = useMobile();
+
+  useEffect(() => {
+    // Immediate mobile detection
+    const isMobileDevice = () => {
+      const width = window.innerWidth;
+      const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      return width < 768 || isMobileUA || (isTouchDevice && width < 1024);
+    };
+
+    // Skip boot screen entirely on mobile
+    if (isMobileDevice()) {
+      return;
+    }
+
+    const hasBootedThisSession = sessionStorage.getItem('hasBooted');
+    const isManualRefresh = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+    
+    // Show boot screen only on desktop for first visit or manual refresh
+    if (isManualRefresh || !hasBootedThisSession) {
+      setShowBootScreen(true);
+      sessionStorage.setItem('hasBooted', 'true');
+    }
+  }, []);
+
+  const handleBootComplete = () => {
+    setShowBootScreen(false);
+  };
+
+  if (showBootScreen) {
+    return <BootSequence onComplete={handleBootComplete} />;
+  }
+
   return (
     <Router>
       <div className="min-h-screen bg-black text-white relative">
-        <GridBackground />
         <div className="relative z-10">
           <Navbar />
           <main className="pt-16 md:pt-20">

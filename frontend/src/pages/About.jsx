@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/navigation/Navbar';
-import BootSequence from '../components/terminal/BootSequence';
 import { useMobile } from '../hooks/useMobile';
 
 export default function About() {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
-  const [isBooting, setIsBooting] = useState(true);
   const { isMobile } = useMobile();
 
   // Mouse tracking for parallax effect
@@ -20,17 +18,6 @@ export default function About() {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
-
-  const handleBootComplete = () => {
-    setIsBooting(false);
-  };
-
-  // Skip boot animation on mobile devices
-  useEffect(() => {
-    if (isMobile) {
-      setIsBooting(false);
-    }
-  }, [isMobile]);
 
   const education = [
     {
@@ -68,29 +55,12 @@ export default function About() {
     }
   ];
 
-  if (isBooting && !isMobile) {
-    return <BootSequence onComplete={handleBootComplete} />;
-  }
-
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
       {/* Navigation Bar */}
       <Navbar />
       
-      {/* Grid Background with Parallax */}
-      <div 
-        className="fixed inset-0 opacity-30"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(0, 212, 170, 0.3) 2px, transparent 2px),
-            linear-gradient(90deg, rgba(0, 212, 170, 0.3) 2px, transparent 2px)
-          `,
-          backgroundSize: '70px 70px',
-          backgroundPosition: `${100 - mousePosition.x}% ${100 - mousePosition.y}%`
-        }}
-      />
-
-      {/* Content */}
+      {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 py-24 pt-32">
         
         {/* Hero Section */}
@@ -118,7 +88,7 @@ export default function About() {
           </h1>
           
           <p className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            AI/ML enthusiast and full-stack developer passionate about creating innovative solutions that bridge technology and human needs
+            AI/ML enthusiast and frontend developer passionate about creating innovative solutions that bridge technology and human needs
           </p>
         </motion.div>
 
@@ -282,27 +252,32 @@ export default function About() {
           
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-            <motion.button
+            <motion.a
+              href="https://calendly.com/harshkakadiya128"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ 
                 scale: 1.05, 
                 boxShadow: "0 0 30px rgba(0, 212, 170, 0.4)" 
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all"
+              className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all inline-block text-center"
             >
               Hire Me
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
+              href="/resume.pdf"
+              download="Harsh_Kakadiya_Resume.pdf"
               whileHover={{ 
                 scale: 1.05, 
                 borderColor: '#00d4aa',
                 color: '#00d4aa'
               }}
               whileTap={{ scale: 0.95 }}
-              className="border-2 border-gray-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-gray-800/50"
+              className="border-2 border-gray-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-gray-800/50 inline-block text-center"
             >
               Download Resume
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Availability Info */}
@@ -321,6 +296,15 @@ export default function About() {
             </div>
           </div>
         </motion.section>
+      </div>
+      
+      {/* Enhanced Background elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-cyan-500/20 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-1/4 -left-20 w-[500px] h-[500px] bg-blue-500/20 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-80 h-80 bg-purple-500/15 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-indigo-500/15 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-3/4 left-1/2 w-72 h-72 bg-teal-500/10 rounded-full filter blur-3xl"></div>
       </div>
     </div>
   );
