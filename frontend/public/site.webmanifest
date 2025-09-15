@@ -1,0 +1,22 @@
+{
+  "name": "Harsh Kakadiya - AI/ML Portfolio",
+  "short_name": "Harsh Portfolio",
+  "description": "Interactive terminal-style portfolio showcasing AI/ML projects and skills",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#00d4aa",
+  "background_color": "#000000",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}
