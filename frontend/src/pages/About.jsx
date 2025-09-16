@@ -88,7 +88,7 @@ export default function About() {
           </h1>
           
           <p className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            AI/ML enthusiast and frontend developer passionate about creating innovative solutions that bridge technology and human needs
+          AI Developer and Conversational AI & Chatbot Specialist passionate about creating innovative solutions that bridge technology and human needs
           </p>
         </motion.div>
 
