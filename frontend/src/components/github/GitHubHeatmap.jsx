@@ -189,7 +189,7 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
 
   if (loading) {
     return (
-      <div className="bg-gray-900/50 backdrop-blur-lg border border-gray-700 rounded-2xl p-6 mb-8">
+      <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 mb-8">
         <h3 className="text-xl font-bold text-white mb-6">GitHub Contributions</h3>
         <div className="flex justify-center items-center h-32">
           <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-cyan-400"></div>
@@ -201,7 +201,7 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
 
   if (error) {
     return (
-      <div className="bg-gray-900/50 backdrop-blur-lg border border-gray-700 rounded-2xl p-6 mb-8">
+      <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 mb-8">
         <h3 className="text-xl font-bold text-white mb-6">GitHub Contributions</h3>
         <div className="text-center text-red-400 p-4 bg-red-900/20 rounded-lg">
           <p>{error}</p>
@@ -225,7 +225,7 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
   // If no data is available, show a fallback message
   if (!heatmapData || !Array.isArray(heatmapData) || heatmapData.length === 0) {
     return (
-      <div className="bg-gray-900/50 backdrop-blur-lg border border-gray-700 rounded-2xl p-6 mb-8">
+      <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 mb-8">
         <h3 className="text-xl font-bold text-white mb-6">GitHub Contributions</h3>
         <div className="text-center text-gray-400 p-4">
           <p>No contribution data available</p>
@@ -245,7 +245,7 @@ export default function GitHubHeatmap({ username = 'harsh-kakadiya1' }) {
   }
 
   return (
-    <div className="bg-gray-900/50 backdrop-blur-lg border border-gray-700 rounded-2xl p-8 mb-8 max-w-6xl mx-auto">
+    <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-8 mb-8 max-w-6xl mx-auto">
       <h3 className="text-2xl font-bold text-white mb-8 text-center">GitHub Contributions</h3>
       
       <div className="flex items-start justify-center">

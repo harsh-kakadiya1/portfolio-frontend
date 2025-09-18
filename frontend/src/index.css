@@ -1,34 +1,53 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed navbar */
+}
+
 body {
   margin: 0;
   font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
-/* Terminal scrollbar styles */
+/* Hide scrollbar but maintain scroll functionality */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Terminal scrollbar styles - keep for terminal components */
 .scrollbar-thin {
   scrollbar-width: thin;
 }
 
-::-webkit-scrollbar {
+.terminal-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
 
-::-webkit-scrollbar-track {
+.terminal-scrollbar::-webkit-scrollbar-track {
   background: black;
 }
 
-::-webkit-scrollbar-thumb {
+.terminal-scrollbar::-webkit-scrollbar-thumb {
   border-radius: 2px;
+  background: rgba(0, 212, 170, 0.4);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.5);
+.terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 170, 0.6);
 }
 
-/* Mobile optimizations */
+/* Mobile optimizations for terminal */
 @media (max-width: 640px) {
-  ::-webkit-scrollbar {
+  .terminal-scrollbar::-webkit-scrollbar {
     width: 2px;
   }
 }

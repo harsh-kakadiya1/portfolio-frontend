@@ -322,7 +322,7 @@ Try asking me anything - I'm here to help!`,
           {/* Terminal Output */}
           <div 
             ref={terminalRef}
-            className={`flex-1 overflow-auto bg-black/90 backdrop-blur-sm ${isMobile ? 'p-2 space-y-1' : 'p-2 sm:p-4 md:p-6 space-y-2 sm:space-y-3'} scrollbar-thin scrollbar-track-black scrollbar-thumb-cyan-500/40 font-mono ${isMobile ? 'text-xs' : 'text-xs sm:text-sm'}`}
+            className={`flex-1 overflow-auto bg-black/90 backdrop-blur-sm ${isMobile ? 'p-2 space-y-1' : 'p-2 sm:p-4 md:p-6 space-y-2 sm:space-y-3'} terminal-scrollbar font-mono ${isMobile ? 'text-xs' : 'text-xs sm:text-sm'}`}
           >
             <AnimatePresence>
               {outputs.map((output) => (

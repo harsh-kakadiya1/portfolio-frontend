@@ -82,7 +82,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="bg-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8"
+              className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-8"
             >
               <h2 className="text-2xl font-bold text-white mb-6">Send me a message</h2>
               
@@ -113,7 +113,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400/50 text-white placeholder-gray-400"
                     placeholder="Your name"
                   />
                 </div>
@@ -129,7 +129,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400/50 text-white placeholder-gray-400"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -145,7 +145,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400/50 text-white placeholder-gray-400"
                     placeholder="Your message here..."
                   />
                 </div>
@@ -233,7 +233,7 @@ export default function Contact() {
                 </div>
               </div>
               
-              <div className="bg-gray-900/50 border border-gray-700 rounded-2xl p-6">
+              <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6">
                 <h3 className="text-lg font-bold text-white mb-3">Looking to hire?</h3>
                 <p className="text-gray-300 text-sm mb-4">
                   I'm currently available for freelance work and full-time positions. Let's talk about how I can help bring your ideas to life.
