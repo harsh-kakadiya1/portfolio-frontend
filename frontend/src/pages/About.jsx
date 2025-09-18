@@ -56,12 +56,9 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
-      {/* Navigation Bar */}
-      <Navbar />
-      
+    <div className="min-h-screen relative">
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-4 py-24 pt-32">
+      <div className="relative z-10 container mx-auto px-4 py-24 pt-32 min-h-screen">
         
         {/* Hero Section */}
         <motion.div
@@ -241,7 +238,7 @@ export default function About() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="text-center bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-lg border border-gray-700 rounded-2xl p-12"
+          className="text-center bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Work <span className="text-cyan-400">Together?</span>
@@ -261,7 +258,7 @@ export default function About() {
                 boxShadow: "0 0 30px rgba(0, 212, 170, 0.4)" 
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all inline-block text-center"
+              className="bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/50 text-cyan-400 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-cyan-500/30 hover:border-cyan-400/70 inline-block text-center"
             >
               Hire Me
             </motion.a>
@@ -274,7 +271,7 @@ export default function About() {
                 color: '#00d4aa'
               }}
               whileTap={{ scale: 0.95 }}
-              className="border-2 border-gray-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-gray-800/50 inline-block text-center"
+              className="bg-black/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:bg-black/40 hover:border-white/50 inline-block text-center"
             >
               Download Resume
             </motion.a>
@@ -298,14 +295,6 @@ export default function About() {
         </motion.section>
       </div>
       
-      {/* Enhanced Background elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-cyan-500/20 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-1/4 -left-20 w-[500px] h-[500px] bg-blue-500/20 rounded-full filter blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/4 w-80 h-80 bg-purple-500/15 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-indigo-500/15 rounded-full filter blur-3xl"></div>
-        <div className="absolute top-3/4 left-1/2 w-72 h-72 bg-teal-500/10 rounded-full filter blur-3xl"></div>
-      </div>
     </div>
   );
 }

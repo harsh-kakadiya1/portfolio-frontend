@@ -218,7 +218,7 @@ export default function Playground() {
   };
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
       {/* Navigation Bar */}
       <Navbar />
       
@@ -241,7 +241,7 @@ export default function Playground() {
           </div>
 
           {/* Profile Overview */}
-          <div className="bg-gray-900/50 backdrop-blur-lg border border-gray-700 rounded-2xl p-6 mb-8">
+          <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 mb-8">
             <div className="flex flex-col md:flex-row items-center">
               <img 
                 src={githubStats.user.avatar} 
@@ -262,7 +262,7 @@ export default function Playground() {
               <motion.div
                 key={key}
                 whileHover={{ y: -5 }}
-                className="bg-gray-900/50 backdrop-blur-lg border border-gray-700 rounded-xl p-6 text-center"
+                className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center"
               >
                 <div className="text-3xl font-bold text-cyan-400 mb-2">{value}</div>
                 <div className="text-sm font-medium text-gray-300 uppercase tracking-wider">
@@ -275,7 +275,7 @@ export default function Playground() {
           {/* Contribution Heatmap */}
           <GitHubHeatmap username={githubUsername} />
           {/* Featured Repositories */}
-          <div className="bg-gray-900/50 backdrop-blur-lg border border-gray-700 rounded-2xl p-6">
+          <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6">
             <h3 className="text-xl font-bold text-white mb-6">Featured Repositories</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {githubStats.featuredRepos.map((repo, i) => (
@@ -285,11 +285,11 @@ export default function Playground() {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ y: -5 }}
-                  className="block bg-gray-800/50 hover:bg-gray-800/80 border border-gray-700 rounded-xl p-5 transition-all"
+                  className="block bg-black/20 hover:bg-black/40 border border-white/20 rounded-xl p-5 transition-all"
                 >
                   <div className="flex items-center mb-3">
                     <h4 className="text-lg font-bold text-white">{repo.name}</h4>
-                    <span className="ml-auto px-2 py-1 text-xs bg-gray-700 text-gray-300 rounded-full">
+                    <span className="ml-auto px-2 py-1 text-xs bg-white/10 text-gray-300 rounded-full">
                       {repo.language}
                     </span>
                   </div>
@@ -343,7 +343,7 @@ export default function Playground() {
                   scale: 1.05,
                   boxShadow: "0 20px 40px rgba(0, 212, 170, 0.15)"
                 }}
-                className="bg-gray-900/50 backdrop-blur-lg border border-gray-700 rounded-2xl p-6 group cursor-pointer relative overflow-hidden"
+                className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6 group cursor-pointer relative overflow-hidden"
               >
                 {/* Gradient Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${tool.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`} />
@@ -389,14 +389,6 @@ export default function Playground() {
         </motion.section>
       </div>
       
-      {/* Enhanced Background elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-cyan-500/20 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-1/4 -left-20 w-[500px] h-[500px] bg-blue-500/20 rounded-full filter blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/4 w-80 h-80 bg-purple-500/15 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-indigo-500/15 rounded-full filter blur-3xl"></div>
-        <div className="absolute top-3/4 left-1/2 w-72 h-72 bg-teal-500/10 rounded-full filter blur-3xl"></div>
-      </div>
     </div>
   );
 }

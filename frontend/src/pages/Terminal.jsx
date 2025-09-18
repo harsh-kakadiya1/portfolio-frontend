@@ -143,7 +143,7 @@ Try asking me anything - I'm here to help!`,
   };
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden touch-manipulation">
+    <div className="min-h-screen relative overflow-hidden touch-manipulation">
       {/* Navigation Bar */}
       <Navbar />
       
@@ -388,14 +388,6 @@ Try asking me anything - I'm here to help!`,
         </div>
       </div>
       
-      {/* Enhanced Background elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-cyan-500/20 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-1/4 -left-20 w-[500px] h-[500px] bg-blue-500/20 rounded-full filter blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/4 w-80 h-80 bg-purple-500/15 rounded-full filter blur-3xl"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-indigo-500/15 rounded-full filter blur-3xl"></div>
-        <div className="absolute top-3/4 left-1/2 w-72 h-72 bg-teal-500/10 rounded-full filter blur-3xl"></div>
-      </div>
     </div>
   );
 }
