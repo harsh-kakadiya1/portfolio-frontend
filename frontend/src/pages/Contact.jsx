@@ -153,11 +153,29 @@ export default function Contact() {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ 
+                    scale: 1.02,
+                    boxShadow: "0 0 20px rgba(34, 211, 238, 0.3)"
+                  }}
                   whileTap={{ scale: 0.98 }}
-                  className={`w-full py-3 px-6 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-medium rounded-lg transition-all ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:opacity-90'}`}
+                  className={`w-full py-3 px-6 bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/50 text-cyan-400 font-medium rounded-lg transition-all hover:bg-cyan-500/30 hover:border-cyan-400/70 hover:text-cyan-300 flex items-center justify-center gap-2 group ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? (
+                    <>
+                      <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <svg className="w-4 h-4 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                      </svg>
+                      Send Message
+                    </>
+                  )}
                 </motion.button>
               </form>
             </motion.div>
@@ -218,16 +236,25 @@ export default function Contact() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-gray-800 hover:bg-gray-700 p-3 rounded-lg transition-colors duration-300"
+                      className="group"
                       aria-label={social.name}
                     >
-                      <svg 
-                        className="w-5 h-5 text-gray-300 hover:text-white" 
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <path d={social.icon} />
-                      </svg>
+                      <div className="relative w-12 h-12 flex items-center justify-center border-none bg-transparent rounded-lg cursor-pointer transition-all duration-300 overflow-hidden">
+                        {/* Background tilt element */}
+                        <div className="absolute inset-0 bg-black/80 rounded-lg transition-all duration-300 group-hover:rotate-[35deg] group-hover:origin-bottom pointer-events-none" />
+                        
+                        {/* Glassmorphism container */}
+                        <div className="relative w-full h-full flex items-center justify-center bg-transparent backdrop-blur-0 border border-gray-400/30 rounded-lg transition-all duration-300 group-hover:bg-gray-400/20 group-hover:backdrop-blur-sm">
+                          {/* Social Media Icon */}
+                          <svg 
+                            className="w-6 h-6 text-white transition-all duration-300 group-hover:scale-110" 
+                            fill="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path d={social.icon} />
+                          </svg>
+                        </div>
+                      </div>
                     </a>
                   ))}
                 </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/navigation/Navbar';
+import { HeroTextPressure } from '../components/ui/hero-text-pressure';
 import { useMobile } from '../hooks/useMobile';
 
 export default function About() {
@@ -78,11 +79,10 @@ export default function About() {
             </div>
           </div>
           
-          {/* Name */}
-          <h1 className="text-5xl md:text-8xl font-bold text-white mb-4">
-            <span className="text-white">Harsh </span>
-            <span className="text-cyan-400">Kakadiya</span>
-          </h1>
+          {/* Interactive Name */}
+          <div className="mb-8">
+            <HeroTextPressure className="text-5xl md:text-8xl" />
+          </div>
           
           <p className="text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
           AI Developer and Conversational AI & Chatbot Specialist passionate about creating innovative solutions that bridge technology and human needs

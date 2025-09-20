@@ -81,8 +81,8 @@ export default function Projects() {
         tech: ["React 19","TypeScript","Vite 6","Gemini 2.5 Flash"],
         image: "/images/projects/nyayasetu.ai-preview.png",
         github: "https://github.com/harsh-kakadiya1/nyayasetu.AI",
-        live: "#",
-        status: "in-progress"
+        live: "https://nyaya-setu-ai.netlify.app/",
+        status: "completed"
       },
       {
         id: 7,
@@ -211,11 +211,14 @@ export default function Projects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: isMobile ? 1.02 : 1.05 }}
+                      whileHover={{ 
+                        scale: isMobile ? 1.02 : 1.05,
+                        boxShadow: "0 0 20px rgba(34, 211, 238, 0.3)"
+                      }}
                       whileTap={{ scale: 0.95 }}
-                      className={`${isMobile ? 'w-full py-2 text-sm' : 'flex-1 py-3 text-base'} bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 rounded-lg font-medium transition-all hover:from-cyan-400 hover:to-blue-400 text-center flex items-center justify-center gap-2`}
+                      className={`${isMobile ? 'w-full py-2 text-sm' : 'flex-1 py-3 text-base'} bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/50 text-cyan-400 px-4 rounded-lg font-medium transition-all hover:bg-cyan-500/30 hover:border-cyan-400/70 hover:text-cyan-300 text-center flex items-center justify-center gap-2 group`}
                     >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <svg className="w-4 h-4 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                       Live Demo
