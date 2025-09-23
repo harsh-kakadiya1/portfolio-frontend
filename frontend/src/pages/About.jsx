@@ -102,6 +102,10 @@ export default function About() {
             </h2>
             <div className="grid md:grid-cols-1 gap-8">
               <div>
+                {/* Site Verification Code */}
+                <div style={{ display: 'none' }}>
+                  Impact-Site-Verification: dbf16cc8-66ad-4289-8598-d4ba255ec555
+                </div>
                 <p className="text-gray-300 text-lg leading-relaxed mb-6">
                   They say data is the new oil, and I'm a 3rd-year AI/ML student who's not 
                   afraid to get my hands dirty. I've spent my time wrangling messy datasets 
