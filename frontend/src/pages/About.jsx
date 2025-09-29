@@ -22,10 +22,10 @@ export default function About() {
 
   const education = [
     {
-      degree: "Secondary Education",
-      institution: "kaushal vidyabhavan, Surat, Gujarat",
-      year: "2019 - 2021",
-      description: "Completed 10th standard with excellent academic performance. Built foundation in core subjects."
+      degree: "Bachelor of Technology: Artificial Intelligence and Machine Learning",
+      institution: "Charotar University of Science and Technology, Changa, Gujarat",
+      year: "2023 - 2027 (Present)",
+      description: "Specialized in AI-ML development, Data analytics, algorithms, problem-solving and modern web technologies."
     },
     {
       degree: "Higher Secondary Education",
@@ -34,10 +34,10 @@ export default function About() {
       description: "Completed 12th standard with focus on Mathematics. Developed strong analytical and problem-solving skills."
     },
     {
-      degree: "Bachelor of Technology: Artificial Intelligence and Machine Learning",
-      institution: "Charotar University of Science and Technology, Changa, Gujarat",
-      year: "2023 - 2027 (Present)",
-      description: "Specialized in AI-ML development, Data analytics, algorithms, problem-solving and modern web technologies."
+      degree: "Secondary Education",
+      institution: "kaushal vidyabhavan, Surat, Gujarat",
+      year: "2019 - 2021",
+      description: "Completed 10th standard with excellent academic performance. Built foundation in core subjects."
     }
   ];
 
@@ -56,7 +56,7 @@ export default function About() {
     },
     {
       role: "Full Stack Developer",
-      company: "Limpid Systems, Surat, Gujarat, India.",
+      company: "Limpid Systems, Surat, Gujarat, India (On-Site)",
       period: "May 2025 - Jun 2025 (2 months)",
       description: "I gained hands-on experience with the MERN stack, finding great satisfaction in working with React and JavaScript."
     }
