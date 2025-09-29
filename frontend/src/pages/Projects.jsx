@@ -31,17 +31,17 @@ export default function Projects() {
       tech: ["React", "Framer Motion", "Node.js"],
       image: "/images/projects/portfolio-preview.png",
       github: "https://github.com/harsh-kakadiya1/portfolio",
-      live: "#",
+      live: "https://harsh-kakadiya.vercel.app/",
       status: "completed"
     },
     {
         id: 2,
-        title: "StyleMe - AI Fashion Stylist",
+        title: "StyleMe - Fashion Stylist",
         description: "StyleMe is a Flutter-based mobile application designed to be your personal fashion assistant.",
         tech: ["Flutter", "Dart"],
         image: "/images/projects/styleme-preview.png",
         github: "https://github.com/harsh-kakadiya1/StyleMe--Your-Personal-AI-Fashion-Stylist",
-        live: "#",
+        live: "https://drive.google.com/file/d/1cEGu5loU0iYGm8pfTZFS5jb9EX4E9Pbe/view?usp=drivesdk",
         status: "in-progress"
       },
     {
