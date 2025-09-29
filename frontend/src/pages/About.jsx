@@ -43,8 +43,14 @@ export default function About() {
 
   const experience = [
     {
+      role: "AI Developer",
+      company: "Thoondil Fish Services, Assam, India (Remote)",
+      period: "Sep 2025 - Present",
+      description: "Design and developing AI-powered chatbot to assist fish consumers and retailers within the Thoondil app."
+    },
+    {
       role: "Data Analyst",
-      company: "Samatrix Consulting Private Limited, Gurugram, Haryana, India.",
+      company: "Samatrix Consulting Private Limited, Gurugram, Haryana, India (Remote)",
       period: "May 2025 - Jun 2025 (2 months)",
       description: "I worked on Data Analysis projects involving the application of statistical techniques and tools."
     },
