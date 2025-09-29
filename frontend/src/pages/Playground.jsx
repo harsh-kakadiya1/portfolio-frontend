@@ -22,8 +22,8 @@ export default function Playground() {
       followers: 12,
       following: 8,
       stars: '40+',
-      repositories: '20',
-      contributions: '345+',
+      repositories: '22',
+      contributions: '400+',
     },
     featuredRepos: [
       {
