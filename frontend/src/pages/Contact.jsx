@@ -263,7 +263,7 @@ export default function Contact() {
               <div className="bg-black/30 backdrop-blur-sm border border-white/50 rounded-2xl p-6">
                 <h3 className="text-lg font-bold text-white mb-3">Looking to hire?</h3>
                 <p className="text-gray-300 text-sm mb-4">
-                  I'm currently available for freelance work and full-time positions. Let's talk about how I can help bring your ideas to life.
+                  I'm currently available for freelance work and internships. Let's talk about how I can help bring your ideas to life.
                 </p>
                 <a 
                   href="https://calendly.com/harshkakadiya128" 
