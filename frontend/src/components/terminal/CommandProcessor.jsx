@@ -13,17 +13,17 @@ const ASCII_ARTS = {
      ╚═══════════════════════════════════════╝`,
   
   coffee: `
-                    (  )   (   )  )
-                     ) (   )  (  (
-                     ( )  (    ) )
-                     _____________
-                    <_____________> ___
-                    |             |/ _ \
-                    |               | | |
-                    |               |_| |
-                 ___|             |\___/
-                /    \___________/    \
-                \_____________________/`,
+        (  )   (   )  )
+         ) (   )  (  (
+         ( )  (    ) )
+         _____________
+        <_____________> ___
+        |             |/ _ \\
+        |               | | |
+        |               |_| |
+     ___|             |\\___/
+    /    \\___________/    \\
+    \\_____________________/`,
 };
 
 export default class CommandProcessor {
@@ -237,10 +237,67 @@ Type '/help' to see what you can do!`
     content: 'Entering the Matrix... (Press ESC to exit)'
   });
 
-  showCoffee = () => ({
-    type: 'output',
-    content: `${ASCII_ARTS.coffee}\n\nCurrent coffee status: Brewing fresh ideas and code!`
-  });
+  showCoffee = () => {
+    // Generate daily stats based on current date
+    const today = new Date();
+    const dateString = today.toDateString(); // "Mon Dec 25 2023" format
+    
+    // Simple hash function for consistent daily randomness
+    const hashCode = (str) => {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convert to 32bit integer
+      }
+      return Math.abs(hash);
+    };
+    
+    const seed = hashCode(dateString);
+    
+    // Generate consistent "random" values for the day
+    const cupsConsumed = 3 + (seed % 8); // 3-10 cups
+    const caffeineLevel = ['LOW', 'MODERATE', 'HIGH', 'MAXIMUM OVERDRIVE', 'DANGEROUSLY HIGH'][seed % 5];
+    const codeQuality = (0.65 + (seed % 30) / 100).toFixed(2); // 0.65-0.94
+    const bugsFixed = (2.1 + (seed % 25) / 10).toFixed(1); // 2.1-4.5
+    const nextRefill = 5 + (seed % 55); // 5-59 minutes
+    
+    const statusMessages = [
+      'FULLY CAFFEINATED AND READY TO CODE! 🚀',
+      'COFFEE LEVELS: OPTIMAL FOR DEBUGGING! ☕',
+      'RUNNING ON PURE CAFFEINE AND DETERMINATION! ⚡',
+      'COFFEE.EXE IS RUNNING SMOOTHLY! 💻',
+      'BEANS PROCESSED, BRAIN ACTIVATED! 🧠'
+    ];
+    const status = statusMessages[seed % statusMessages.length];
+
+    return {
+      type: 'output',
+      content: `<span style="color: white;">                    (  )   (   )  )
+                     ) (   )  (  (
+                     ( )  (    ) )</span>
+<span style="color: #b75a35;">                     _____________
+                    &lt;_____________&gt; ___
+                    |             |/ _ \\
+                    |               | | |
+                    |               |_| |
+                 ___|             |\\___/
+                /    \\___________/    \\
+                \\_____________________/</span>
+
+☕ COFFEE STATUS REPORT ☕
+━━━━━━━━━━━━━━━━━━━━━━━━━
+Cups consumed today: ${cupsConsumed}
+Current caffeine level: ${caffeineLevel}
+Code quality correlation: +${codeQuality}
+Bugs fixed per cup: ${bugsFixed}
+Next refill in: ${nextRefill} minutes
+
+Status: ${status}
+    `,
+      allowHTML: true
+    };
+  };
 
   sudoResponse = () => ({
     type: 'error',

@@ -14,10 +14,10 @@ const CustomCursor: React.FC = () => {
       if (
         target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
-        target.classList.contains('cursor-pointer') ||
-        target.closest('a') ||
-        target.closest('button') ||
-        target.closest('[role="button"]')
+        target.classList?.contains('cursor-pointer') ||
+        target.closest?.('a') ||
+        target.closest?.('button') ||
+        target.closest?.('[role="button"]')
       ) {
         setIsHovering(true);
       }
@@ -28,10 +28,10 @@ const CustomCursor: React.FC = () => {
       if (
         target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
-        target.classList.contains('cursor-pointer') ||
-        target.closest('a') ||
-        target.closest('button') ||
-        target.closest('[role="button"]')
+        target.classList?.contains('cursor-pointer') ||
+        target.closest?.('a') ||
+        target.closest?.('button') ||
+        target.closest?.('[role="button"]')
       ) {
         setIsHovering(false);
       }

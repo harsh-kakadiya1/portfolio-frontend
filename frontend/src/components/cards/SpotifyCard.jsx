@@ -12,15 +12,14 @@ export default function SpotifyCard({ initialPosition = { x: 20, y: 450 } }) {
         <div className="space-y-3">
           <div className="w-full h-20">
             <iframe 
-              data-testid="embed-iframe-1"
+              data-testid="embed-iframe"
               style={{
                 borderRadius: '8px',
                 width: '100%',
                 height: '100%',
                 border: 'none'
               }} 
-              src="https://open.spotify.com/embed/track/5cF0dROlMOK5uNZtivgu50?utm_source=generator" 
-              allowFullScreen 
+              src="https://open.spotify.com/embed/track/3eSm4iAkLsn3BeggfiQOH9?utm_source=generator" 
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
               loading="lazy"
             />
@@ -35,7 +34,6 @@ export default function SpotifyCard({ initialPosition = { x: 20, y: 450 } }) {
                 border: 'none'
               }} 
               src="https://open.spotify.com/embed/track/1fkjRQA8wXPPyxqYLbxuqy?utm_source=generator"
-              allowFullScreen 
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
               loading="lazy"
             />
