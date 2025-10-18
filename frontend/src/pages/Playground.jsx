@@ -181,6 +181,12 @@ export default function Playground() {
       description: "All-in-one workspace for notes, planning, and organization",
       icon: "",
       color: "from-gray-600 to-gray-700"
+    },
+    {
+      name: "POSTMAN",
+      description: "API development and testing platform for seamless integration",
+      icon: "",
+      color: "from-purple-500 to-purple-600"
     }
   ];
 

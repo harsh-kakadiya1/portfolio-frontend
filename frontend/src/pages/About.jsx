@@ -44,7 +44,7 @@ export default function About() {
   const experience = [
     {
       role: "AI Developer",
-      company: "Thoondil Fish Services, Assam, India (Remote)",
+      company: "Thoondil Fish Services, moongilthuraipattu, Tamil Nadu, India (Remote)",
       period: "Sep 2025 - Present",
       description: "Design and developing AI-powered chatbot to assist fish consumers and retailers within the Thoondil app."
     },
